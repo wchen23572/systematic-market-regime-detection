@@ -39,6 +39,10 @@ The final model identifies three interpretable market regimes:
   - **GLD** performs particularly well during Inflationary / Tight Monetary conditions
   - **TLT** performs strongly during Crisis conditions
 - K-Means clustering is stable across tested random initializations, with **ARI = 1.00** across all tested seeds.
+  
+### Market Regimes Through Time
+
+![Market regimes identified using PCA and K-Means](images/market_regimes.png)
 
 ## Data
 
@@ -122,6 +126,7 @@ Cross-Asset Performance Analysis
 PCA is used to reduce the dimensionality of the standardized feature set.
 
 The first **7 principal components retain 92.21% of cumulative explained variance**, providing substantial dimensionality reduction while preserving most of the information in the original 13 features.
+![PCA cumulative explained variance](images/pca_explained_variance.png)
 
 ## Regime Selection
 
@@ -132,6 +137,8 @@ The highest silhouette score occurs at:
 **k = 3, silhouette score = 0.3055**
 
 This supports the final three-regime specification.
+
+![K-Means silhouette analysis](images/silhouette_analysis.png)
 
 ## Identified Regimes
 
@@ -165,6 +172,8 @@ Characterized by:
 ## Cross-Asset Performance
 
 Annualized arithmetic returns conditional on regime:
+
+![Annualized asset returns across market regimes](images/asset_returns_by_regime.png)
 
 | Regime | SPY | TLT | GLD | DBC | UUP |
 |---|---:|---:|---:|---:|---:|
@@ -231,4 +240,6 @@ Potential extensions include:
 
 ## Notebook
 
-The complete Python notebook containing data collection, feature engineering, modeling, validation, and analysis is included in this repository.
+The complete analysis, including data collection, feature engineering, PCA, clustering, historical validation, and cross-asset analysis, is available in the full notebook:
+
+[View the full analysis notebook](systematic_market_regime_detection.ipynb)
