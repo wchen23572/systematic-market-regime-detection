@@ -242,4 +242,4 @@ Potential extensions include:
 
 The complete analysis, including data collection, feature engineering, PCA, clustering, historical validation, and cross-asset analysis, is available in the full notebook:
 
-[View the full analysis notebook](systematic_market_regime_detection.ipynb)
+[View the full analysis notebook](Systematic_Market_Regime_Detection_%26_Asset_Allocation_Final_%20.ipynb)
