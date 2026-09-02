@@ -42,7 +42,7 @@ The final model identifies three interpretable market regimes:
   
 ### Market Regimes Through Time
 
-![Market regimes identified using PCA and K-Means](images/market_regimes.png)
+![Market regimes identified using PCA and K-Means](Images/market_regimes.png)
 
 ## Data
 
@@ -126,7 +126,7 @@ Cross-Asset Performance Analysis
 PCA is used to reduce the dimensionality of the standardized feature set.
 
 The first **7 principal components retain 92.21% of cumulative explained variance**, providing substantial dimensionality reduction while preserving most of the information in the original 13 features.
-![PCA cumulative explained variance](images/pca_explained_variance.png)
+![PCA cumulative explained variance](Images/pca_explained_variance.png)
 
 ## Regime Selection
 
@@ -138,7 +138,7 @@ The highest silhouette score occurs at:
 
 This supports the final three-regime specification.
 
-![K-Means silhouette analysis](images/silhouette_analysis.png)
+![K-Means silhouette analysis](Images/silhouette_analysis.png)
 
 ## Identified Regimes
 
@@ -173,7 +173,7 @@ Characterized by:
 
 Annualized arithmetic returns conditional on regime:
 
-![Annualized asset returns across market regimes](images/asset_returns_by_regime.png)
+![Annualized asset returns across market regimes](Images/asset_returns_by_regime.png)
 
 | Regime | SPY | TLT | GLD | DBC | UUP |
 |---|---:|---:|---:|---:|---:|
