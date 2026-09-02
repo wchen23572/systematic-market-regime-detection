@@ -115,3 +115,120 @@ Regime Interpretation
 Historical Validation
         ↓
 Cross-Asset Performance Analysis
+```
+
+## PCA
+
+PCA is used to reduce the dimensionality of the standardized feature set.
+
+The first **7 principal components retain 92.21% of cumulative explained variance**, providing substantial dimensionality reduction while preserving most of the information in the original 13 features.
+
+## Regime Selection
+
+K-Means models with **2 through 10 clusters** are evaluated using silhouette scores.
+
+The highest silhouette score occurs at:
+
+**k = 3, silhouette score = 0.3055**
+
+This supports the final three-regime specification.
+
+## Identified Regimes
+
+### Low-Volatility / Risk-On
+
+Characterized by:
+
+- Strong positive equity momentum
+- Relatively low realized volatility
+- Lower VIX levels
+
+### Inflationary / Tight Monetary
+
+Characterized by:
+
+- Higher inflation
+- Elevated Federal Funds Rate
+- Higher Treasury yields
+- Moderate market volatility
+
+### Crisis / Severe Risk-Off
+
+Characterized by:
+
+- Strongly negative equity momentum
+- Very high realized volatility
+- VIX above 40 on average
+- Strong Treasury momentum
+- Severe commodity weakness
+
+## Cross-Asset Performance
+
+Annualized arithmetic returns conditional on regime:
+
+| Regime | SPY | TLT | GLD | DBC | UUP |
+|---|---:|---:|---:|---:|---:|
+| Low-Volatility / Risk-On | 22.13% | 1.11% | 6.59% | 7.71% | -1.12% |
+| Inflationary / Tight Monetary | 8.54% | 1.20% | 18.17% | 7.78% | 5.29% |
+| Crisis / Severe Risk-Off | -52.71% | 46.93% | 12.69% | -71.57% | 7.17% |
+
+These figures represent annualized averages of daily returns observed within each regime. They are not realized calendar-year returns or compound annual growth rates.
+
+## Regime Persistence
+
+The identified regimes exhibit strong one-day persistence:
+
+| Current Regime | Probability of Remaining in Same Regime |
+|---|---:|
+| Low-Volatility / Risk-On | 99.43% |
+| Inflationary / Tight Monetary | 99.71% |
+| Crisis / Severe Risk-Off | 94.70% |
+
+## Robustness
+
+The final three-cluster model was re-estimated using multiple K-Means random seeds.
+
+Across all tested initializations:
+
+**Adjusted Rand Index = 1.00**
+
+This indicates identical cluster assignments across the tested random seeds.
+
+## Limitations
+
+This project is an **ex-post historical classification framework**, not a live trading system.
+
+Key limitations include:
+
+- PCA, standardization, and K-Means are fitted using the full historical sample
+- The analysis does not include a real-time out-of-sample trading backtest
+- Macroeconomic series may contain revised historical values
+- Economic regime labels are assigned after examining cluster characteristics
+- Results depend on the selected features, lookback windows, and historical sample
+- Historical asset relationships may not persist in the future
+
+## Future Research
+
+Potential extensions include:
+
+- Rolling or expanding-window estimation
+- Out-of-sample regime classification
+- Regime-aware portfolio construction
+- Transaction costs and implementation delays
+- Gaussian Mixture Models
+- Hidden Markov Models
+- Credit spreads, market breadth, liquidity, and earnings features
+
+## Tools
+
+- Python
+- pandas
+- NumPy
+- yfinance
+- fredapi
+- scikit-learn
+- matplotlib
+
+## Notebook
+
+The complete Python notebook containing data collection, feature engineering, modeling, validation, and analysis is included in this repository.
