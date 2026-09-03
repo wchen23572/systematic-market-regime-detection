@@ -1,5 +1,3 @@
-# systematic-market-regime-detection
-Unsupervised market regime detection using PCA, K-Means, macroeconomic indicators, and cross-asset data.
 # Systematic Market Regime Detection & Cross-Asset Analysis
 
 Unsupervised market-regime detection using **PCA, K-Means clustering, macroeconomic indicators, and cross-asset market data**.
